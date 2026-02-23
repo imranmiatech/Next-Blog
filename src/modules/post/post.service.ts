@@ -1,11 +1,11 @@
 import { prisma } from "../../lib/prisma"
-import { Post } from "@prisma/client"
+import { Post } from "../../../generated/prisma/client"
 
 const createPost = async (
   data: Omit<Post, "id" | "createdAt" | "updatedAt">
 ) => {
   const result = await prisma.post.create({
-    data,
+    data
   })
 
   return result
